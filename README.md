@@ -7,6 +7,7 @@ https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
 # See This :
 https://betterprogramming.pub/swiftui-basic-components-ac2c62dc7b95
 https://www.hackingwithswift.com/quick-start/swiftui/displaying-a-detail-screen-with-navigationlink
+https://www.simpleswiftguide.com/advanced-swiftui-button-styling-and-animation/
 
 Command + SHIFT + L
 
