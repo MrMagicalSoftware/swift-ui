@@ -180,3 +180,23 @@ struct ContentView: View {
 
 
 
+struct AddView: View {
+    @Binding var isPresented: Bool
+
+    var body: some View {
+        Button("Dismiss") {
+            isPresented = false
+        }
+    }
+}
+That property literally means “I have a Boolean value called isPresented, but it’s being stored elsewhere.”
+So, when we create that AddView to replace the // show the add user view comment from earlier, we’d need to provide the value so it can be manipulated:
+
+
+.sheet(isPresented: $showingAddUser) {
+    AddView(isPresented: $showingAddUser)
+}
+
+
+
+
