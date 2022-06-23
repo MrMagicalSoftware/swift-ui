@@ -136,6 +136,17 @@ Button {
 }
 ```
 
+
+# Handle Image 
+
+Image("nomeImmagine")
+    .resizable()
+    .aspectRadio(contentMode : .fit)
+    .frame(width : 200 , height : 200 , aligment : .center )
+    
+
+
+
 # @State & @Binding
 
 
