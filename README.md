@@ -231,11 +231,14 @@ Tip: It is really important that you use @ObservedObject only with views that we
 As an example, here’s a UserProgress class that conforms to ObservableObject:
 
 
-
+```
 class UserProgress: ObservableObject {
     @Published var score = 0
 }
 
+```
+
+```
 struct InnerView: View {
     @ObservedObject var progress: UserProgress
 
@@ -245,7 +248,9 @@ struct InnerView: View {
         }
     }
 }
+```
 
+```
 struct ContentView: View {
     @StateObject var progress = UserProgress()
 
@@ -257,7 +262,7 @@ struct ContentView: View {
     }
 }
 
-
+```
 
 
 
