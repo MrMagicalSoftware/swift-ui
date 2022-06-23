@@ -150,5 +150,31 @@ The purpose of Toggle is simple: it is used to bind a property.
 In some cases, we can use it to alter the screen, showing or hiding other views.
 
 
+# Example of using the state
+
+
+struct ContentView: View {
+    @State private var users = ["Paul", "Taylor", "Adele"]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(users, id: \.self) { user in
+                    Text(user)
+                }
+                .onDelete(perform: delete)
+            }
+            .navigationTitle("Users")
+        }
+    }
+
+    func delete(at offsets: IndexSet) {
+        users.remove(atOffsets: offsets)
+    }
+}
+
+
+
+
 
 
