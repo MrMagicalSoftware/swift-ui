@@ -174,7 +174,9 @@ struct ContentView: View {
 }
 
 
+# Binding
 
+@Binding lets us declare that one value actually comes from elsewhere, and should be shared in both places.
 
 
 
