@@ -15,14 +15,15 @@ Posso fare il drag and drop degli elementi UI
 
 VStack -> significa vertical Stack
 
+
+```
 VStack {
-
     Text("Hello Word").padding()
-
     Button(action : action){
         content
     }
 }
+```
 
 HStack -> Stack orizzontale
 
@@ -70,6 +71,7 @@ https://developer.apple.com/sf-symbols/
 
 Esempio di come accedere a SF symbols :
 
+```
 VStack {
     Image(systemName : "cloud.sun.fill")
         .renderingMode(.original)
@@ -84,6 +86,8 @@ VStack {
 
 VStack(spacing : 10 ) {
 }<- Ogni elemento ha uno space di 10 unità
+```
+
 
 
 # Intro a come creare migliori UI
@@ -93,6 +97,7 @@ Si apre un menu -> Selezionare Exstract SubView
 
 Crea una funzione a parte.
 
+```
 struct ExampleOfView : View {
 
     var myName : String
@@ -108,6 +113,8 @@ struct ExampleOfView : View {
     }
 
 }
+```
+
 
 Posso richiamamere il codice in qualsiasi
 punto mi devo solamente ricordare che
@@ -117,6 +124,7 @@ ExampleOfView(myImage : "" , myName : "")
 
 # How to make Buttons
 
+```
 Button {
     print("tapped")
 } label :{
@@ -126,7 +134,7 @@ Button {
         .font(.system(size : 20 , weight : . bold , design : .default))
         .cornerRadius(10)
 }
-
+```
 
 # @State & @Binding
 
@@ -139,7 +147,7 @@ Button {
 
 
 # Example
-
+```
 @State private var isInDarkMode = false
 
 
@@ -149,10 +157,12 @@ Button {
 The purpose of Toggle is simple: it is used to bind a property.
 In some cases, we can use it to alter the screen, showing or hiding other views.
 
+```
+
 
 # Example of using the state
 
-
+```
 struct ContentView: View {
     @State private var users = ["Paul", "Taylor", "Adele"]
 
@@ -172,14 +182,14 @@ struct ContentView: View {
         users.remove(atOffsets: offsets)
     }
 }
-
+```
 
 # Binding
 
 @Binding lets us declare that one value actually comes from elsewhere, and should be shared in both places.
 
 
-
+```
 struct AddView: View {
     @Binding var isPresented: Bool
 
@@ -189,14 +199,15 @@ struct AddView: View {
         }
     }
 }
+```
 That property literally means “I have a Boolean value called isPresented, but it’s being stored elsewhere.”
 So, when we create that AddView to replace the // show the add user view comment from earlier, we’d need to provide the value so it can be manipulated:
 
-
+```
 .sheet(isPresented: $showingAddUser) {
     AddView(isPresented: $showingAddUser)
 }
-
+```
 
 
 
