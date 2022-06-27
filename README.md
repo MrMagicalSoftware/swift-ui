@@ -4,6 +4,7 @@
 https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
 
 
+
 # See This :
 https://betterprogramming.pub/swiftui-basic-components-ac2c62dc7b95
 https://www.hackingwithswift.com/quick-start/swiftui/displaying-a-detail-screen-with-navigationlink
@@ -169,6 +170,34 @@ The purpose of Toggle is simple: it is used to bind a property.
 In some cases, we can use it to alter the screen, showing or hiding other views.
 
 ```
+
+
+
+# Make Buttons with Gradients 
+
+```
+struct GradientButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color.white)
+            .padding()
+            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(15.0)
+    }
+}
+
+
+Button(action: {
+    print("Button action")
+}) {
+    HStack {
+        Image(systemName: "bookmark.fill")
+        Text("Bookmark")
+    }
+}.buttonStyle(GradientButtonStyle())
+
+```
+
 
 
 # Example of using the state
